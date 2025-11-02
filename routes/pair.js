@@ -18,10 +18,13 @@ router.get("/", async (req, res) => {
   
   if (!num) {
     return res.status(400).json({ 
-      error: "Phone number is required",
+      error: "Please enter your phone number with country code (e.g., 923197521693)",
       code: null 
     });
   }
+  
+  // Remove any non-numeric characters immediately
+  num = num.replace(/[^0-9]/g, "");
 
   const id = makeid();
   const fetch = (await import("node-fetch")).default;
