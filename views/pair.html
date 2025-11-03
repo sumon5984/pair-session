@@ -12,54 +12,179 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .animate-slide-up {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+
+        .copy-success {
+            animation: successPop 0.4s ease-out;
+        }
+
+        .dark-card {
+            background: rgba(15, 15, 25, 0.9);
+            border: 1px solid rgba(100, 100, 120, 0.2);
+            backdrop-filter: blur(20px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dark-card:hover {
+            background: rgba(20, 20, 35, 0.95);
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .dark-input {
+            background: rgba(10, 10, 20, 0.8);
+            border: 2px solid rgba(100, 100, 120, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .dark-input:focus {
+            background: rgba(15, 15, 25, 0.9);
+            border-color: rgba(139, 92, 246, 0.6);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+
+        .gradient-btn {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .gradient-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .gradient-btn:hover::before {
+            left: 100%;
+        }
+
+        .gradient-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+        }
+
+        .gradient-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .code-display {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .spinner {
+            border-top-color: #8b5cf6;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+        }
+    </style>
 </head>
 <body class="antialiased min-h-screen flex items-center justify-center px-4 py-8">
     <main class="w-full max-w-2xl">
-        <div class="text-center mb-10 fade-in-up">
-            <a href="/" class="inline-flex items-center space-x-3 mb-8 hover:opacity-80 transition">
-                <img src="https://files.catbox.moe/e5b2az.jpg" alt="ALI-MD Logo" class="w-16 h-16 rounded-full border-2 border-pink-500 shadow-lg">
-                <span class="text-3xl font-black hero-title-gradient">ALI-MD</span>
+        <div class="text-center mb-10 animate-slide-up">
+            <a href="/" class="inline-flex items-center space-x-3 mb-8 hover:opacity-80 transition-opacity duration-300">
+                <img src="https://files.catbox.moe/e5b2az.jpg" alt="ALI-MD Logo" class="w-16 h-16 rounded-full shadow-xl">
+                <span class="text-3xl font-black text-white">ALI-MD</span>
             </a>
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">Phone Number Pairing</h1>
-            <p class="text-lg md:text-xl text-gray-300">Enter your phone number to get a pairing code</p>
+            <p class="text-lg md:text-xl text-gray-400">Enter your phone number to get a pairing code</p>
         </div>
 
-        <div class="feature-card-advanced rounded-3xl p-8 md:p-10 mb-6 fade-in-up" style="transition-delay: 100ms;">
+        <div class="dark-card rounded-3xl p-8 md:p-10 mb-6 animate-slide-up" style="animation-delay: 0.1s;">
             <div class="mb-8">
                 <label for="phoneNumber" class="block text-white font-bold mb-4 text-lg">
-                    <i class="fas fa-phone text-pink-400 mr-2"></i>
+                    <i class="fas fa-phone text-purple-400 mr-2"></i>
                     WhatsApp Phone Number
                 </label>
                 <input 
                     type="tel" 
                     id="phoneNumber" 
                     placeholder="923197521693" 
-                    class="w-full px-5 py-4 rounded-xl bg-black/40 border-2 border-white/20 text-white text-lg placeholder-gray-500 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition"
+                    class="dark-input w-full px-5 py-4 rounded-xl text-white text-lg placeholder-gray-600 focus:outline-none"
                     inputmode="numeric"
                     pattern="[0-9]*"
                     maxlength="15"
                 >
-                <p class="text-gray-400 text-sm mt-3">
-                    <i class="fas fa-info-circle text-pink-400 mr-1"></i>
+                <p class="text-gray-500 text-sm mt-3">
+                    <i class="fas fa-info-circle text-purple-400 mr-1"></i>
                     Include country code without + or spaces (e.g., 923197521693)
                 </p>
             </div>
 
             <button 
                 id="generateBtn" 
-                class="w-full btn-glow text-white font-bold py-5 px-8 rounded-xl shadow-2xl flex items-center justify-center gap-3 mb-8 text-lg"
+                class="gradient-btn w-full text-white font-bold py-5 px-8 rounded-xl shadow-2xl flex items-center justify-center gap-3 mb-8 text-lg"
             >
                 <i class="fas fa-key"></i>
                 <span>Generate Pairing Code</span>
             </button>
 
-            <div id="loading" class="hidden text-center py-10">
-                <div class="inline-block w-16 h-16 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mb-6"></div>
+            <div id="loading" class="hidden text-center py-10 animate-fade-in">
+                <div class="inline-block w-16 h-16 border-4 border-gray-700 border-t-purple-500 rounded-full animate-spin mb-6 spinner"></div>
                 <p class="text-gray-300 font-semibold text-lg">Generating your code...</p>
                 <p class="text-gray-500 text-sm mt-2">This may take a few seconds</p>
             </div>
 
-            <div id="errorDisplay" class="hidden glass-effect rounded-xl p-6 mb-6 border-2 border-red-500/30">
+            <div id="errorDisplay" class="hidden dark-card rounded-xl p-6 mb-6 border-2 border-red-500/30 animate-scale-in">
                 <div class="flex items-start gap-3">
                     <i class="fas fa-exclamation-circle text-red-400 text-2xl mt-1"></i>
                     <div>
@@ -69,64 +194,64 @@
                 </div>
             </div>
 
-            <div id="codeDisplay" class="hidden glass-effect rounded-xl p-8 text-center border-2 border-green-500/30">
+            <div id="codeDisplay" class="hidden dark-card rounded-xl p-8 text-center border-2 border-green-500/30 animate-scale-in">
                 <div class="flex items-center justify-center gap-2 mb-4">
                     <i class="fas fa-check-circle text-green-400 text-2xl"></i>
                     <p class="text-green-400 font-bold text-lg">Success!</p>
                 </div>
                 <p class="text-gray-300 mb-6 text-lg">Your Pairing Code:</p>
-                <div class="bg-black/60 rounded-xl p-8 mb-6 border border-pink-500/30">
-                    <p id="pairCode" class="text-5xl md:text-6xl font-black hero-title-gradient tracking-wider"></p>
+                <div class="code-display rounded-xl p-8 mb-6">
+                    <p id="pairCode" class="text-5xl md:text-6xl font-black text-white tracking-wider"></p>
                 </div>
                 <button 
                     id="copyBtn" 
-                    class="w-full px-8 py-4 rounded-xl border-2 border-pink-500/40 text-pink-400 font-bold hover:bg-pink-500/20 transition flex items-center justify-center gap-3 text-lg"
+                    class="w-full px-8 py-4 rounded-xl border-2 border-purple-500/40 text-purple-400 font-bold hover:bg-purple-500/20 transition-all duration-300 flex items-center justify-center gap-3 text-lg"
                 >
                     <i class="fas fa-copy"></i>
                     <span>Copy Code</span>
                 </button>
             </div>
 
-            <div class="glass-effect rounded-xl p-6 mt-8">
+            <div class="dark-card rounded-xl p-6 mt-8 animate-slide-up" style="animation-delay: 0.2s;">
                 <h3 class="text-white font-bold mb-4 flex items-center gap-2 text-lg">
-                    <i class="fas fa-info-circle text-pink-400"></i>
+                    <i class="fas fa-info-circle text-purple-400"></i>
                     How to Use
                 </h3>
                 <ol class="space-y-3 text-gray-300">
                     <li class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 font-bold flex-shrink-0">1</span>
+                        <span class="step-number inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold flex-shrink-0">1</span>
                         <span>Enter your WhatsApp phone number with country code (no + symbol)</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 font-bold flex-shrink-0">2</span>
+                        <span class="step-number inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold flex-shrink-0">2</span>
                         <span>Click "Generate Pairing Code" button</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 font-bold flex-shrink-0">3</span>
+                        <span class="step-number inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold flex-shrink-0">3</span>
                         <span>Open WhatsApp → Settings → Linked Devices</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 font-bold flex-shrink-0">4</span>
+                        <span class="step-number inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold flex-shrink-0">4</span>
                         <span>Tap "Link a Device" → "Link with phone number instead"</span>
                     </li>
                     <li class="flex items-start gap-3">
-                        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 font-bold flex-shrink-0">5</span>
+                        <span class="step-number inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold flex-shrink-0">5</span>
                         <span>Enter the 8-digit code displayed above</span>
                     </li>
                 </ol>
             </div>
 
-            <div class="text-center mt-8">
-                <p class="text-gray-400 text-sm mb-4">Prefer QR code pairing?</p>
-                <a href="/qr-scanner" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-pink-500/30 text-pink-400 font-bold hover:bg-pink-500/10 transition">
+            <div class="text-center mt-8 animate-fade-in" style="animation-delay: 0.3s;">
+                <p class="text-gray-500 text-sm mb-4">Prefer QR code pairing?</p>
+                <a href="/qr-scanner" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl border-2 border-purple-500/30 text-purple-400 font-bold hover:bg-purple-500/10 transition-all duration-300">
                     <i class="fas fa-qrcode text-xl"></i>
                     <span>Use QR Pairing Instead</span>
                 </a>
             </div>
         </div>
 
-        <div class="text-center fade-in-up" style="transition-delay: 200ms;">
-            <a href="/" class="inline-flex items-center gap-2 text-gray-400 hover:text-pink-400 transition text-lg">
+        <div class="text-center animate-slide-up" style="animation-delay: 0.4s;">
+            <a href="/" class="inline-flex items-center gap-2 text-gray-500 hover:text-purple-400 transition-colors duration-300 text-lg">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
@@ -145,12 +270,10 @@
         const copyBtn = document.getElementById('copyBtn');
         const loading = document.getElementById('loading');
 
-        // Input validation - only allow numbers
         phoneInput.addEventListener('input', (e) => {
             e.target.value = e.target.value.replace(/[^0-9]/g, '');
         });
 
-        // Show error message
         function showError(message) {
             errorMessage.textContent = message;
             errorDisplay.classList.remove('hidden');
@@ -159,11 +282,9 @@
             }, 5000);
         }
 
-        // Generate pairing code
         generateBtn.addEventListener('click', async () => {
             const phone = phoneInput.value.trim();
 
-            // Validation
             if (!phone) {
                 showError('Please enter your phone number with country code');
                 phoneInput.focus();
@@ -182,7 +303,6 @@
                 return;
             }
 
-            // Disable button and show loading
             generateBtn.disabled = true;
             generateBtn.classList.add('opacity-50', 'cursor-not-allowed');
             loading.classList.remove('hidden');
@@ -190,25 +310,19 @@
             errorDisplay.classList.add('hidden');
 
             try {
-                console.log('Requesting pairing code for:', phone);
                 const response = await axios.get(`/code?phone=${phone}`, {
-                    timeout: 30000 // 30 seconds timeout
+                    timeout: 30000
                 });
-                
-                console.log('Response:', response.data);
                 
                 if (response.data.code) {
                     pairCode.textContent = response.data.code;
                     loading.classList.add('hidden');
                     codeDisplay.classList.remove('hidden');
-                    
-                    // Scroll to code display
                     codeDisplay.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {
                     throw new Error(response.data.error || 'Failed to generate code');
                 }
             } catch (error) {
-                console.error('Error:', error);
                 loading.classList.add('hidden');
                 
                 let errorMsg = 'Failed to generate pairing code. Please try again.';
@@ -228,22 +342,21 @@
             }
         });
 
-        // Copy code to clipboard
         copyBtn.addEventListener('click', () => {
             const code = pairCode.textContent;
             
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(code).then(() => {
                     const originalHTML = copyBtn.innerHTML;
+                    copyBtn.classList.add('copy-success');
                     copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
                     copyBtn.classList.add('bg-green-500/20', 'border-green-500', 'text-green-400');
                     
                     setTimeout(() => {
                         copyBtn.innerHTML = originalHTML;
-                        copyBtn.classList.remove('bg-green-500/20', 'border-green-500', 'text-green-400');
+                        copyBtn.classList.remove('bg-green-500/20', 'border-green-500', 'text-green-400', 'copy-success');
                     }, 2000);
                 }).catch(err => {
-                    console.error('Failed to copy:', err);
                     fallbackCopyTextToClipboard(code);
                 });
             } else {
@@ -251,7 +364,6 @@
             }
         });
 
-        // Fallback copy method for older browsers
         function fallbackCopyTextToClipboard(text) {
             const textArea = document.createElement('textarea');
             textArea.value = text;
@@ -265,32 +377,30 @@
                 const successful = document.execCommand('copy');
                 if (successful) {
                     const originalHTML = copyBtn.innerHTML;
+                    copyBtn.classList.add('copy-success');
                     copyBtn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
                     copyBtn.classList.add('bg-green-500/20', 'border-green-500', 'text-green-400');
                     
                     setTimeout(() => {
                         copyBtn.innerHTML = originalHTML;
-                        copyBtn.classList.remove('bg-green-500/20', 'border-green-500', 'text-green-400');
+                        copyBtn.classList.remove('bg-green-500/20', 'border-green-500', 'text-green-400', 'copy-success');
                     }, 2000);
                 } else {
                     showError('Failed to copy code. Please copy manually.');
                 }
             } catch (err) {
-                console.error('Fallback copy failed:', err);
                 showError('Failed to copy code. Please copy manually.');
             }
             
             document.body.removeChild(textArea);
         }
 
-        // Allow Enter key to generate code
         phoneInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 generateBtn.click();
             }
         });
 
-        // Focus on phone input when page loads
         window.addEventListener('load', () => {
             phoneInput.focus();
         });
