@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALI-MD - Advanced WhatsApp Bot Pairing Platform</title>
     <link rel="icon" href="https://files.catbox.moe/e5b2az.jpg" type="image/png">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,8 +41,7 @@
     <!-- Mobile Menu -->
     <div id="mobile-menu">
         <div class="pt-20 px-4">
-            <a href="/pair" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">Phone Pairing</a>
-            <a href="/qr-scanner" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">QR Pairing</a>
+            <a href="#pair" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">Quick Pair</a>
             <a href="#commands" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">Commands</a>
             <a href="#features" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">Features</a>
             <a href="#about" class="block py-4 px-6 text-gray-200 hover:text-white transition mobile-nav-link rounded-lg mb-1">About</a>
@@ -56,23 +54,27 @@
     <main class="pt-20">
 
         <!-- Video Hero Section -->
-        <section id="video-hero" class="relative overflow-hidden py-20">
-            <div class="container mx-auto px-4">
-                <div class="video-container max-w-4xl mx-auto">
-                    <video id="heroVideo" class="hero-video w-full rounded-2xl shadow-2xl" autoplay loop muted playsinline>
+        <section id="video-hero" class="relative overflow-hidden py-16">
+            <div class="container mx-auto">
+                <div class="video-container">
+                    <video id="heroVideo" class="hero-video" autoplay loop muted playsinline>
                         <source src="https://www.rabbit.zone.id/hbdl07.webm" type="video/webm">
                         Your browser does not support the video tag.
                     </video>
                 </div>
-                <div class="video-content text-center mt-12 px-4">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">ALI MD — The Ultimate Multi-Device WhatsApp Bot</h2>
-                    <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-4">Experience the best free WhatsApp bot — no server, no panel required!</p>
-                    <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8">Simply pair your device and start your bot instantly.</p>
+                <div class="video-content text-center mt-8 px-4">
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">ALI MD — The Ultimate Multi-Device WhatsApp Bot</h2>
+                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-4">Experience the best free WhatsApp bot — no server, no panel required!</p>
+                    <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-3">Simply pair your device and start your bot instantly.</p>
+                    <div class="mt-6 text-[8px] text-gray-700 opacity-20">
+                        <p class="mb-1">Powered by ALI MD</p>
+                        <p>Created by ALI INXIDE 🍉</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Quick Pair CTA Section -->
+        <!-- Quick Pair CTA Section (Previously Footer) -->
         <section id="pair" class="min-h-screen flex items-center px-4 py-20 relative overflow-hidden">
             <div class="absolute inset-0 grid-background opacity-20"></div>
             <div class="relative z-10 max-w-6xl mx-auto w-full">
@@ -88,20 +90,11 @@
                     No panel required. No server needed. Just scan the code and start using your powerful WhatsApp bot instantly.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 items-start fade-in-up" style="transition-delay: 200ms;">
-                    <a href="/pair" class="btn-glow text-white font-semibold py-4 px-10 rounded-xl text-base shadow-2xl inline-flex items-center gap-3">
+                    <a href="https://x-ALI-pair.vercel.app/" target="_blank" class="btn-glow text-white font-semibold py-4 px-10 rounded-xl text-base shadow-2xl inline-flex items-center gap-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M16.6 14c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1-.2-.1-.9-.3-1.8-1.1-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.2-.2.4-.4.1-.1.2-.2.2-.4.1-.1.1-.3 0-.4-.1-.1-1.1-2.6-1.5-3.5-.4-.9-.8-1.1-.8-1.1-.1 0-.3-.1-.5-.1h-.5c-.2 0-.5.2-.6.5-.2.3-.7 1.4-.7 3.3s.8 3.8 1 4.1c.1.2 1.5 2.3 3.6 3.2.5.2.9.4 1.2.5.5.2 1 .2 1.3.1.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.3-.2-.5-.3zM12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
                         </svg>
-                        Phone Pairing
-                    </a>
-                    <a href="/qr-scanner" class="px-8 py-4 rounded-xl border-2 border-pink-500/40 text-white font-semibold text-base hover:bg-pink-500/20 transition inline-flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="8" height="8" rx="1"></rect>
-                            <rect x="13" y="3" width="8" height="8" rx="1"></rect>
-                            <rect x="3" y="13" width="8" height="8" rx="1"></rect>
-                            <rect x="13" y="13" width="8" height="8" rx="1"></rect>
-                        </svg>
-                        QR Pairing
+                        Start Pairing Now
                     </a>
                     <a href="#about" class="px-8 py-4 rounded-xl border-2 border-white/20 text-white font-semibold text-base hover:bg-white/10 transition inline-flex items-center gap-2">
                         Learn More
@@ -112,149 +105,135 @@
                     </a>
                 </div>
                 <div class="mt-12 grid grid-cols-3 gap-6 max-w-2xl fade-in-up" style="transition-delay: 300ms;">
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black hero-title-gradient mb-2">100+</div>
+                    <div>
+                        <div class="text-3xl font-black hero-title-gradient mb-1">100+</div>
                         <div class="text-gray-400 text-xs uppercase tracking-wide">Commands</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black hero-title-gradient mb-2">24/7</div>
+                    <div>
+                        <div class="text-3xl font-black hero-title-gradient mb-1">24/7</div>
                         <div class="text-gray-400 text-xs uppercase tracking-wide">Active Bot</div>
                     </div>
-                    <div class="text-center">
-                        <div class="text-3xl md:text-4xl font-black hero-title-gradient mb-2">FREE</div>
+                    <div>
+                        <div class="text-3xl font-black hero-title-gradient mb-1">FREE</div>
                         <div class="text-gray-400 text-xs uppercase tracking-wide">Forever</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How to Pair Section -->
+        <!-- How to Pair Section (Previously Get Started) -->
         <section id="start" class="py-32 px-4 bg-black/20">
             <div class="container mx-auto">
                 <div class="text-center max-w-3xl mx-auto mb-20 fade-in-up">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">Get Started in 3 Easy Steps</h2>
+                    <h2 class="text-5xl md:text-6xl font-black text-white mb-6">Get Started in 3 Easy Steps</h2>
                     <p class="text-xl text-gray-300">No technical skills required. Your bot is ready in under a minute.</p>
                 </div>
                 <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
-                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 fade-in-up hover:shadow-2xl transition-all duration-300">
-                        <div class="text-5xl mb-6">📱</div>
-                        <h3 class="text-2xl text-white font-bold mb-4">Click Pair Button</h3>
+                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 fade-in-up">
+
+                        <h3 class="text-2xl text-white font-bold mb-4 mt-6">Click Pair Button</h3>
                         <p class="text-gray-300 leading-relaxed">Get your unique 8-digit pairing code instantly—completely free</p>
                     </div>
-                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 fade-in-up hover:shadow-2xl transition-all duration-300" style="transition-delay: 150ms;">
-                        <div class="text-5xl mb-6">🔗</div>
-                        <h3 class="text-2xl text-white font-bold mb-4">Link Device</h3>
+                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 fade-in-up" style="transition-delay: 150ms;">
+
+                        <h3 class="text-2xl text-white font-bold mb-4 mt-6">Link Device</h3>
                         <p class="text-gray-300 leading-relaxed">Open WhatsApp → Linked Devices → Enter your code</p>
                     </div>
-                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 fade-in-up hover:shadow-2xl transition-all duration-300" style="transition-delay: 300ms;">
-                        <div class="text-5xl mb-6">🚀</div>
-                        <h3 class="text-2xl text-white font-bold mb-4">Start Using Bot</h3>
+                    <div class="relative p-10 rounded-3xl bg-gradient-to-br from-pink-500/10 to-purple-500/10 border border-pink-500/20 fade-in-up" style="transition-delay: 300ms;">
+
+                        <h3 class="text-2xl text-white font-bold mb-4 mt-6">Start Using Bot</h3>
                         <p class="text-gray-300 leading-relaxed">Type .menu and unlock 100+ powerful commands instantly</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Commands Showcase -->
+        <!-- Commands Showcase (Redesigned) -->
         <section id="commands" class="py-24 px-4">
             <div class="container mx-auto">
                 <div class="max-w-3xl mb-16 fade-in-up">
-                    <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Powerful Command Library</h2>
-                    <p class="text-lg text-gray-300">Over 100 commands at your fingertips—all completely free to use</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Powerful Command Library</h2>
+                    <p class="text-base text-gray-300">Over 100 commands at your fingertips—all completely free to use</p>
                 </div>
-                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="command-card p-8 rounded-2xl fade-in-up group">
-                        <div class="text-4xl mb-4">🤖</div>
-                        <h4 class="font-bold text-pink-400 text-lg mb-2 group-hover:text-pink-300 transition">Smart Assistant</h4>
-                        <p class="text-sm text-gray-400">Intelligent Responses</p>
+                <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="command-card p-6 rounded-xl fade-in-up group">
+                        <h4 class="font-bold text-pink-400 text-base mb-1 group-hover:text-pink-300 transition">Smart Assistant</h4>
+                        <p class="text-xs text-gray-400">Intelligent Responses</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 100ms;">
-                        <div class="text-4xl mb-4">📥</div>
-                        <h4 class="font-bold text-purple-400 text-lg mb-2 group-hover:text-purple-300 transition">Downloader</h4>
-                        <p class="text-sm text-gray-400">YouTube, TikTok, IG</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 100ms;">
+                        <h4 class="font-bold text-purple-400 text-base mb-1 group-hover:text-purple-300 transition">Downloader</h4>
+                        <p class="text-xs text-gray-400">YouTube, TikTok, IG</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 200ms;">
-                        <div class="text-4xl mb-4">👥</div>
-                        <h4 class="font-bold text-pink-400 text-lg mb-2 group-hover:text-pink-300 transition">Group Tools</h4>
-                        <p class="text-sm text-gray-400">Admin Controls</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 200ms;">
+                        <h4 class="font-bold text-pink-400 text-base mb-1 group-hover:text-pink-300 transition">Group Tools</h4>
+                        <p class="text-xs text-gray-400">Admin Controls</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 300ms;">
-                        <div class="text-4xl mb-4">🎨</div>
-                        <h4 class="font-bold text-purple-400 text-lg mb-2 group-hover:text-purple-300 transition">Media Tools</h4>
-                        <p class="text-sm text-gray-400">Stickers & Effects</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 300ms;">
+                        <h4 class="font-bold text-purple-400 text-base mb-1 group-hover:text-purple-300 transition">Media Tools</h4>
+                        <p class="text-xs text-gray-400">Stickers & Effects</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 100ms;">
-                        <div class="text-4xl mb-4">🔍</div>
-                        <h4 class="font-bold text-pink-400 text-lg mb-2 group-hover:text-pink-300 transition">Search</h4>
-                        <p class="text-sm text-gray-400">Web & Images</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 100ms;">
+                        <h4 class="font-bold text-pink-400 text-base mb-1 group-hover:text-pink-300 transition">Search</h4>
+                        <p class="text-xs text-gray-400">Web & Images</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 200ms;">
-                        <div class="text-4xl mb-4">🎮</div>
-                        <h4 class="font-bold text-purple-400 text-lg mb-2 group-hover:text-purple-300 transition">Entertainment</h4>
-                        <p class="text-sm text-gray-400">Games & Fun</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 200ms;">
+                        <h4 class="font-bold text-purple-400 text-base mb-1 group-hover:text-purple-300 transition">Entertainment</h4>
+                        <p class="text-xs text-gray-400">Games & Fun</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 300ms;">
-                        <div class="text-4xl mb-4">🛠️</div>
-                        <h4 class="font-bold text-pink-400 text-lg mb-2 group-hover:text-pink-300 transition">Utilities</h4>
-                        <p class="text-sm text-gray-400">Converters & Tools</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 300ms;">
+                        <h4 class="font-bold text-pink-400 text-base mb-1 group-hover:text-pink-300 transition">Utilities</h4>
+                        <p class="text-xs text-gray-400">Converters & Tools</p>
                     </div>
-                    <div class="command-card p-8 rounded-2xl fade-in-up group" style="transition-delay: 400ms;">
-                        <div class="text-4xl mb-4">⚙️</div>
-                        <h4 class="font-bold text-purple-400 text-lg mb-2 group-hover:text-purple-300 transition">Settings</h4>
-                        <p class="text-sm text-gray-400">Customization</p>
+                    <div class="command-card p-6 rounded-xl fade-in-up group" style="transition-delay: 400ms;">
+                        <h4 class="font-bold text-purple-400 text-base mb-1 group-hover:text-purple-300 transition">Settings</h4>
+                        <p class="text-xs text-gray-400">Customization</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Features Grid -->
+        <!-- Features Grid (Redesigned) -->
         <section id="features" class="py-24 px-4 bg-black/20">
             <div class="container mx-auto">
                 <div class="max-w-3xl mb-16 fade-in-up">
-                    <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Why Choose ALI-MD</h2>
-                    <p class="text-lg text-gray-300">Professional features, completely free. No hidden costs, no server required.</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Why Choose ALI-MD</h2>
+                    <p class="text-base text-gray-300">Professional features, completely free. No hidden costs, no server required.</p>
                 </div>
-                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up">
-                        <div class="text-4xl mb-4">⚡</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Lightning Fast</h3>
+                <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up">
+                        <h3 class="text-lg font-bold text-white mb-3">Lightning Fast</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">Optimized for speed with near-instant response times on every command</p>
                     </div>
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up" style="transition-delay: 100ms;">
-                        <div class="text-4xl mb-4">🔒</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Secure by Design</h3>
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up" style="transition-delay: 100ms;">
+                        <h3 class="text-lg font-bold text-white mb-3">Secure by Design</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">End-to-end encrypted sessions with enterprise-grade security protocols</p>
                     </div>
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up" style="transition-delay: 200ms;">
-                        <div class="text-4xl mb-4">🌐</div>
-                        <h3 class="text-xl font-bold text-white mb-3">24/7 Uptime</h3>
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up" style="transition-delay: 200ms;">
+                        <h3 class="text-lg font-bold text-white mb-3">24/7 Uptime</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">Cloud-hosted with automatic failover for uninterrupted service</p>
                     </div>
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up" style="transition-delay: 100ms;">
-                        <div class="text-4xl mb-4">🎯</div>
-                        <h3 class="text-xl font-bold text-white mb-3">No Setup Required</h3>
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up" style="transition-delay: 100ms;">
+                        <h3 class="text-lg font-bold text-white mb-3">No Setup Required</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">No panel, no server, no installation—just pair and start using immediately</p>
                     </div>
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up" style="transition-delay: 200ms;">
-                        <div class="text-4xl mb-4">🔄</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Regular Updates</h3>
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up" style="transition-delay: 200ms;">
+                        <h3 class="text-lg font-bold text-white mb-3">Regular Updates</h3>
                         <p class="text-gray-300 text-sm leading-relaxed">Constantly evolving with new features and improvements</p>
                     </div>
-                    <div class="feature-card-advanced rounded-2xl p-10 fade-in-up" style="transition-delay: 300ms;">
-                        <div class="text-4xl mb-4">💎</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Premium Quality</h3>
-                        <p class="text-gray-300 text-sm leading-relaxed">Professional-grade bot with powerful automation and advanced features</p>
+                    <div class="feature-card-advanced rounded-2xl p-8 fade-in-up" style="transition-delay: 300ms;">
+                        <h3 class="text-lg font-bold text-white mb-3">Premium Quality</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">Professional-grade bot with powerful automation and advanced features included</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About/Hero Section (Previously at top) -->
         <section id="about" class="py-32 px-4">
             <div class="container mx-auto">
                 <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2 fade-in-up">
-                        <img src="https://www.rabbit.zone.id/7rxkz4.jpg" alt="ALI-MD Bot" class="bot-hero-image mx-auto lg:mx-0 shadow-2xl rounded-2xl max-w-full" onerror="this.src='https://via.placeholder.com/500x500/7b1fa2/ffffff?text=ALI-MD'">
+                        <img src="https://www.rabbit.zone.id/7rxkz4.jpg" alt="ALI-MD Bot" class="bot-hero-image mx-auto lg:mx-0 shadow-2xl" onerror="this.src='https://via.placeholder.com/500x500/7b1fa2/ffffff?text=ALI-MD'">
                     </div>
                     <div class="lg:w-1/2 fade-in-up" style="transition-delay: 150ms;">
                         <span class="inline-block px-4 py-2 bg-pink-500/20 border border-pink-500/30 rounded-full text-pink-300 font-semibold mb-6 text-sm">ABOUT ALI-MD</span>
@@ -270,7 +249,7 @@
                                 <div class="text-pink-400 font-bold text-lg">No Server Needed</div>
                             </div>
                             <div class="px-6 py-3 rounded-xl bg-purple-500/20 border border-purple-500/30">
-                                <div class="text-purple-400 font-bold text-lg">100+ Commands</div>
+                                <div class="text-purple-400 font-bold text-lg">300+ Commands</div>
                             </div>
                             <div class="px-6 py-3 rounded-xl bg-pink-500/20 border border-pink-500/30">
                                 <div class="text-pink-400 font-bold text-lg">Free Forever</div>
@@ -311,7 +290,7 @@
                 </div>
             </div>
             <div class="border-t border-white/10 pt-8 text-center">
-                <p class="text-gray-400 text-sm">© 2025 ALI INXIDE INC. All rights reserved.</p>
+                <p class="text-gray-400 text-sm">漏 2025 ALI INXIDE INC. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -347,6 +326,6 @@
         </div>
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
